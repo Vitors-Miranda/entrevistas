@@ -132,9 +132,7 @@ campos = (
 
 # SALVAR OS DADOS
 btn_salvar = ctk.CTkButton(frame_form, text="Salvar", command=saveForm)
-btn_salvar.grid(row = 5, column = 2, pady = 15, padx = 10)
+btn_salvar.grid(row = 5, column = 2, pady=(300, 20), padx = 10)
 
-txt_aba = ctk.CTkLabel(frame_form, text= "Cadastro", font=("Helvetica", 15))
-txt_aba.grid(row = 7, column = 2, pady=(260, 20), padx = 10)
 
 app.mainloop()
