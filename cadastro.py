@@ -21,6 +21,7 @@ window_width = 1080
 window_height = 720
 
 app = ctk.CTk()  
+app.resizable("false", "false")
 app.geometry(f"{window_width }x{window_height}")
 
 # centralizando a janela
