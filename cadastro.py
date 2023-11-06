@@ -69,7 +69,7 @@ def verification():
 
 # MENU
 frame_menu = ctk.CTkFrame(app)
-frame_menu.grid(row=0, column=0, padx=30, pady=(20, 0))
+frame_menu.grid(row=0, column=0, padx=20, pady=(20, 0))
 
 txt_menu = ctk.CTkLabel(frame_menu, text= "Menu", font=("Helvetica", 15))
 txt_menu.grid(row = 0, column = 0, pady = 15, padx = 10)
@@ -85,7 +85,7 @@ txt_autor.grid(row = 4, column = 0, pady=(450, 20), padx = 10)
 
 # FORMULÁRIO DO ENTREVISTADO
 frame_form = ctk.CTkFrame(app)
-frame_form.grid(row=0, column=1, padx=5, pady=(10, 0))
+frame_form.grid(row=0, column=1, padx=10, pady=(10, 0))
 
 txt_title1 = ctk.CTkLabel(frame_form, text= "Dados do entrevistado", font=("Helvetica", 15))
 txt_title1.grid(row = 0, column = 1, pady = 15, padx = 0)
