@@ -11,7 +11,7 @@
 #App init
 import customtkinter as ctk
 from centerScreen import center_screen
-from backend import inserir_valores
+from db import inserir_valores
 from CTkMessagebox import CTkMessagebox
 
 ctk.set_appearance_mode("System")  
@@ -32,8 +32,10 @@ def saveForm():
         inserir_valores(input_nome.get(), input_telefone.get(), input_email.get(), input_bio.get(), input_entrevista.get(), input_pratico.get(), input_teorico.get(), input_softSkills.get())
         clearForm()
         CTkMessagebox(title="Sucesso", message="Dados inseridos com sucessso.", icon="check")
+    elif verification() == 2:
+        CTkMessagebox(title="Erro", message="As notas da entrevista devem ser numéricas.", icon="cancel")
     else:
-        CTkMessagebox(title="Erro", message="Preencha todos os campos com valores adequados.", icon="cancel")
+        CTkMessagebox(title="Erro", message="Preencha os dados do entrevistado.", icon="cancel")
 
 #ClearForm
 def clearForm():
@@ -52,12 +54,12 @@ def verification():
             preenchido += 1
         cont += 1
 
-    # Verificando se as ntas são numéricas de fato
+    # Verificando se as notas são numéricas de fato
         if cont >= 5:
             try:
                 float(campo.get())
             except:
-                return 0
+                return 2
 
     if preenchido == 8:
         return 1
