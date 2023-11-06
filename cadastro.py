@@ -11,7 +11,7 @@
 #App init
 import customtkinter as ctk
 from centerScreen import center_screen
-from db import inserir_valores
+from db import insert
 from CTkMessagebox import CTkMessagebox
 
 ctk.set_appearance_mode("System")  
@@ -30,11 +30,13 @@ center_screen(app, window_width, window_height)
 #Salvar Info
 def saveForm():
     if verification() == 1:
-        inserir_valores(input_nome.get(), input_telefone.get(), input_email.get(), input_bio.get(), input_entrevista.get(), input_pratico.get(), input_teorico.get(), input_softSkills.get())
+        insert(input_nome.get(), input_telefone.get(), input_email.get(), input_bio.get(), input_entrevista.get(), input_pratico.get(), input_teorico.get(), input_softSkills.get())
         clearForm()
         CTkMessagebox(title="Sucesso", message="Dados inseridos com sucessso.", icon="check")
+
     elif verification() == 2:
         CTkMessagebox(title="Erro", message="As notas da entrevista devem ser numéricas.", icon="cancel")
+
     else:
         CTkMessagebox(title="Erro", message="Preencha os dados do entrevistado.", icon="cancel")
 
